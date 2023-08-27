@@ -1,0 +1,35 @@
+# Name of the executable
+ft_curl
+
+# Object files
+**/*.o
+
+# Stderr logs (AddressSanitizer, etc)
+error_log
+
+# Nginx test container directory
+nginx
+
+# Clangd compile flags
+compile_flags.txt
+compile_commands.json
+
+# Clang cache
+.cache
+
+# personal TODO file
+TODO
+
+# VIM swap files
+**/*.swp
+**/*.swo
+
+#log files
+log
+
+## Debugger
+.vscode
+*.dSYM
+
+# Diffs
+git_diff
