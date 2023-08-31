@@ -23,6 +23,8 @@ CXXFLAGS 		+= -Wconversion -Wshadow -pedantic
 CXXFLAGS 		+= -g3
 
 CXXFLAGS 		+= -I ./include
+CXXFLAGS 		+= -I ./cxxopts/include
+CXXFLAGS 		+= -I ./src/arguments
 
 #***************************************************************#
 #                                                               #
