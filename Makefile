@@ -25,6 +25,7 @@ CXXFLAGS 		+= -g3
 CXXFLAGS 		+= -I ./include
 CXXFLAGS 		+= -I ./cxxopts/include
 CXXFLAGS 		+= -I ./src/arguments
+CXXFLAGS 		+= -I ./src/client
 
 #***************************************************************#
 #                                                               #
@@ -40,11 +41,16 @@ ARG					= $(addprefix $(ARGDIR)/,$(ARGSRC))
 ARGDIR			= arguments
 ARGSRC			= Arguments.cpp \
 
+CLIENT					= $(addprefix $(CLIENTDIR)/,$(CLIENTSRC))
+CLIENTDIR			= client
+CLIENTSRC			= Client.cpp \
+
 MAIN					= $(addprefix $(MAINDIR)/,$(MAINSRC))
 MAINDIR			= main
 MAINSRC			= main.cpp \
 
 SRC 				= $(addprefix $(SRCDIR)/,$(ARG))
+SRC 				+= $(addprefix $(SRCDIR)/,$(CLIENT))
 SRC 				+= $(addprefix $(SRCDIR)/,$(MAIN))
 
 #***************************************************************#

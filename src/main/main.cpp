@@ -1,5 +1,7 @@
 #include "Arguments.hpp"
+#include "Client.hpp"
 #include "logging.hpp"
+
 #include <cstdlib>
 #include <exception>
 
@@ -13,5 +15,7 @@ int main(int argc, const char* argv[]) {
 	}
 
 	args->print();
+	Client* client = new Client(args->urls()[0]);
+	client->print();
 	return EXIT_SUCCESS;
 }

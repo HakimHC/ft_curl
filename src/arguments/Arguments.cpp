@@ -21,7 +21,7 @@ Arguments::Arguments(const int& argc, const char* argv[]) {
 		.set_width(70)
 		.set_tab_expansion()
 		.add_options()
-		("v,verbose", "Verbose output", cxxopts::value<bool>()->default_value("false"))
+		("v,verbose", "Produce verbose output", cxxopts::value<bool>()->default_value("false"))
 		("X,request", "Specify request method to use", cxxopts::value<std::string>())
 		("d,data", "Specify POST request data", cxxopts::value<std::string>())
 		("URL", "URL to request", cxxopts::value<std::vector<std::string>>())
@@ -63,6 +63,9 @@ const std::string& Arguments::httpMethod() const {
 
 const bool& Arguments::verbose() const {
 	return this->_verbose;
+}
+const std::vector<std::string>& Arguments::urls() const {
+	return this->_urls;
 }
 
 void Arguments::print() const {

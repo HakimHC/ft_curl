@@ -12,8 +12,10 @@ class Arguments {
 		const std::string& httpMethod() const;
 		const std::string& data() const;
 		const bool& verbose() const;
+		const std::vector<std::string>& urls() const;
 
 		void print() const;
+
 
 	private:
 		Arguments();
