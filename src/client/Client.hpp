@@ -1,25 +1,29 @@
 #ifndef __CLIENT_HPP__
-# define __CLIENT_HPP__
+#define __CLIENT_HPP__
 
-# include <string>
 #include <sys/types.h>
 
+#include <string>
+
 class Client {
-	public:
-		Client(const std::string&);
-		~Client();
+ public:
+  Client(const std::string&);
+  ~Client();
 
-		void print() const;
-	private:
-		Client();
+  void print() const;
 
-		const std::string& 	_url;
-		std::string 		_protocol;
-		std::string 		_hostName;
-		u_int16_t		_port;
+ private:
+  Client();
 
-		int 			_sockFd;
+  void connectToServer();
 
+  const std::string& _url;
+  std::string _protocol;
+  std::string _hostName;
+  u_int16_t _port;
+
+  int _sockFd;
+  int _srvSocketFd;
 };
 
-#endif // __CLIENT_HPP__
+#endif  // __CLIENT_HPP__
